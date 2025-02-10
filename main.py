@@ -1,7 +1,10 @@
 import math
 
+# This is a simple calculator that can perform basic operations
+
 list_to_calculate = []
-EXITING_LABEL = "Exiting..."
+EXITING_LABEL = "Exiting..."    
+
 def main(): 
     is_running = True
     print("-------------------------")
@@ -9,7 +12,7 @@ def main():
     print("_________________________")
     print()
     
-    
+    # Main loop
     while is_running:
         user_number = input("Enter a number (x to exit): ").strip()
         print()
@@ -31,10 +34,11 @@ def main():
 
 def calculate():
     is_calculating = False
-       
+    
+    # Loop for calculating the expression
     while not is_calculating:
         
-        user_method = input("Enter a method (pow, dew, mult, add, subtr) or number (calc to calculate)(x to exit): ")
+        user_method = input("Enter a method (pow, dew, mult, add, subtr) or num (calc to calculate)(x to exit): ")
         print()        
         if handle_exit(user_method):
             is_calculating = True
@@ -82,7 +86,7 @@ def handle_method(user_method):
         if user_method.lower() in method_dict:
             list_to_calculate.append(method_dict[user_method.lower()])
         else:
-            print("Please enter a valid method")
+            print("Please enter a valid method dude")
 
 def calculate_expression(): 
     try:
